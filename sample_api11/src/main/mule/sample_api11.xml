@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="537e1ec1-0fd3-4f7f-b60b-dc76762cf774" >
+		<http:listener-connection host="0.0.0.0" port="8083" />
+	</http:listener-config>
+	<flow name="sample_api11Flow" doc:id="75a09665-0b0a-411c-a214-1892a93740b3" >
+		<http:listener doc:name="Listener" doc:id="feae9fc2-f252-4ac2-8a12-83849a11aeb8" config-ref="HTTP_Listener_config" path="/ashok"/>
+		<logger level="INFO" doc:name="Logger" doc:id="20051ece-37d1-4b1c-91fc-be3518d8e8d2" message="manual project"/>
+	</flow>
+</mule>
